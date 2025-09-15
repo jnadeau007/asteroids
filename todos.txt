@@ -1,0 +1,9 @@
+# Future Features to add
+
+- Scoring system
+- explosion effect for asteroids after they've been hit
+- acceleration to the player movment
+- add a background image instead of blank black screen
+- render the objects as actual asteroids and ships instead of circles and triangle
+- add shield power-up and speed power-up
+- add bombs to be dropped
