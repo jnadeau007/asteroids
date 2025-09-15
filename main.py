@@ -37,9 +37,17 @@ def main():
             ele.draw(screen)
         updatable.update(dt)
         for asteroid in asteroids:
+            # check if player collided with an asteroid
             if asteroid.detect_collisions(player):
                 print('Game over!')
                 sys.exit()
+            # check if a players bullet hit an asteroid
+            for bullet in shots:
+                if asteroid.detect_collisions(bullet):
+                    # destory asteroid and remove from screen
+                    asteroid.kill()
+                    # remove bullet from screen after impact on asteroid
+                    bullet.kill()
         pygame.display.flip()
         dt = time_clock.tick(60) / 1000
 
