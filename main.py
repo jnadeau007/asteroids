@@ -44,10 +44,11 @@ def main():
             # check if a players bullet hit an asteroid
             for bullet in shots:
                 if asteroid.detect_collisions(bullet):
-                    # destory asteroid and remove from screen
-                    asteroid.kill()
+                    # destory or split asteroid a
+                    asteroid.split()
                     # remove bullet from screen after impact on asteroid
                     bullet.kill()
+                    break # stop checking other bullets for this asteroid
         pygame.display.flip()
         dt = time_clock.tick(60) / 1000
 
